@@ -1,0 +1,68 @@
+
+.group {
+    position: relative;
+    display: flex;
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    gap: 20px; /* Khoảng cách giữa nút bấm và các mục */
+    
+}
+
+.btn-outline-primary{
+    
+    background-color: #3b2efc; 
+    color: rgb(247, 246, 246);
+}
+.btn {
+    padding: 8px 16px;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    
+}
+
+.btn:hover
+{
+    color: white;
+    background-color: #1180f7
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f1f3f5;
+    color: #fff;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Đặt ngay bên dưới nút */
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    list-style-type: none;
+    padding: 0;
+    width: 50%; /* Đảm bảo menu rộng bằng nút */
+    margin-top: 5px;
+    z-index: 1000;
+    display: none; /* Ẩn menu theo mặc định */
+}
+
+.dropdown-item {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #131212;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #69b4e6;
+}
+
