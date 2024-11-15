@@ -429,7 +429,7 @@ p:last-child {
 
 .brand-wrap .logo, .navbar-brand .logo {
   margin-right: 30px;
-  max-height: 80px;
+  max-height: 60px;
   display: inline-block;
 }
 
@@ -1413,3 +1413,81 @@ a[class*=card]:hover .title {
 }
 
 /*# sourceMappingURL=ui.css.map */
+
+
+
+/* Tổng quan carousel */
+/* Tổng thể của section */
+.section-intro {
+  background-color: #f9f9f9; /* Màu nền nhạt */
+  padding: 20px 0; /* Khoảng cách trên và dưới */
+}
+
+
+/* Container bên trong section */
+.section-intro .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px; /* Khoảng cách hai bên */
+}
+
+/* Carousel */
+#carouselExampleControls {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px; /* Đặt giới hạn chiều rộng */
+  border-radius: 10px; /* Bo góc */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng mờ */
+}
+
+/* Ảnh bên trong carousel */
+.carousel-inner .carousel-item img {
+  height: 400px; /* Chiều cao cố định */
+  object-fit: cover; /* Tự động cắt ảnh phù hợp với khung */
+  border-radius: 10px; /* Giữ bo góc cho ảnh */
+}
+
+/* Nút điều hướng */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5); /* Nền mờ tối */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Nền đậm hơn khi hover */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* Hiệu ứng chuyển đổi giữa các slide */
+.carousel-item {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
