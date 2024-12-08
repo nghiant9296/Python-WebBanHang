@@ -1,0 +1,88 @@
+{% extends 'my_tmp/layouts.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- Button trigger modal -->
+ <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+	Launch demo modal
+  </button> -->
+  
+    <script>
+		$(document).ready(function () {
+			$('#exampleModalCenter').modal('show');
+		});
+	</script>
+
+  <!-- begin Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLongTitle">Web project with Django framework</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		 - Đây là sản phẩm website demo do nhóm học viên Jabil phát triển với sự 
+			hướng dẫn của Chuyên gia Henry.Nguyen IMIC.
+		  <br/> - Sử dụng ngôn ngữ lập trình Python & Django framework + MSSQL Database Server + RESTful Api Services
+		  <br/><img src="{% static 'images/z6105019250370_d528258bf27009927d62ead33a105d7a.jpg' %}" alt="IMIC">	
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+		  <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+		</div>
+	  </div>
+	</div>
+  </div>
+  <!-- end Modal -->
+
+<!-- ========================= SECTION MAIN ========================= -->
+<section class="section-intro padding-y-sm">
+<div class="container">
+
+<div class="intro-banner-wrap">
+	<img src="{% static 'images/banners/cover.jpg' %}" class="img-fluid rounded">
+</div>
+
+</div> <!-- container //  -->
+</section>
+<!-- ========================= SECTION MAIN END// ========================= -->
+
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name padding-y-sm">
+<div class="container">
+
+<header class="section-heading">
+	<a href="{% url 'store' %}" class="btn btn-outline-primary float-right" data-toggle="modal" data-target="#exampleModalCenter">See all</a>
+	<h3 class="section-title">Popular products</h3>
+</header><!-- sect-heading -->
+	
+<div class="row">
+	{% for product in products %}	
+	<div class="col-md-3">
+		<div class="card card-product-grid">
+			<!--<a href="./product-detail.html" class="img-wrap"> 
+				<img src="{% static 'images/items/1.jpg' %}"> </a>-->
+			<a href="{{product.xem_chi_tiet}}" class="img-wrap"> 
+					<img src="{{product.images.url}}"> </a>
+			<figcaption class="info-wrap">
+				<a href="{{product.xem_chi_tiet}}" class="title">{{product.product_name}}</a>
+				<div class="price mt-1">${{product.price}}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->	
+	{% endfor %}	
+</div> <!-- row.// -->
+
+
+
+</div><!-- container // -->
+</section>
+<!-- ========================= SECTION  END// ========================= -->
+
+{% endblock %}
+</body>
+</html>
