@@ -91,7 +91,7 @@ DATABASES = {
         'ENGINE': 'mssql',
         'NAME': 'Myshop',
         'USER':'Admin',
-        'PASSWORD':'101192',
+        'PASSWORD':'120590',
         'HOST':'NGHIANT',
         #'PORT':'',
         'OPTIONS':{

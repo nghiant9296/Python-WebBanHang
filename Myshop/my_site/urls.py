@@ -21,9 +21,11 @@ from my_app import views
 from my_site.settings import MEDIA_ROOT
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', views.trang_chu, name='home'),
     path('my_app/', include('my_app.urls')),
     path('store/', include('store.urls')),
+    path('', include('accounts.urls')),
     path('cart/', include('carts.urls')),
-    path('admin/', admin.site.urls),
+  
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
